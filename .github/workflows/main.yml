@@ -10,7 +10,13 @@ jobs:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v3
+      - name: brew update
+        run: brew update
       - name: Install hdf5-mpi
         run: brew install hdf5-mpi
+      - name: brew config
+        run: brew config
+      - name: brew doctor
+        run: brew doctor
       - name: Compile test file
         run: h5pfc test.f90
